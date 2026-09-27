@@ -6,6 +6,7 @@ import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { ResumeSheet } from "./components/ResumeSheet";
 import { Differentials, Skills } from "./components/Skills";
+import { WhatsAppFloat } from "./components/WhatsAppFloat";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
           <Contact />
         </main>
         <Footer />
+        <WhatsAppFloat />
       </div>
       <ResumeSheet />
     </MotionConfig>

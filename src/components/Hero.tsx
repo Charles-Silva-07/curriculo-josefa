@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, ArrowRight, MapPin, Phone } from "lucide-react";
 import { useRef } from "react";
 import { address, asset, contact, images, profile, whatsappLink } from "../data";
-import { ThreadLine } from "./ui";
+import { ThreadLine, WhatsAppIcon } from "./ui";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -113,13 +113,13 @@ export function Hero() {
           </motion.div>
 
           {contact.phone && (
-            <motion.a
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.75 }}
-              href={`tel:+55${contact.phone.replace(/\D/g, "")}`}
-              className="group mt-6 inline-flex items-center gap-3 text-ink"
+              className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3"
             >
+            <a href={`tel:+55${contact.phone.replace(/\D/g, "")}`} className="group inline-flex items-center gap-3 text-ink">
               <span className="grid h-10 w-10 place-items-center rounded-full bg-rose-soft text-rose-deep transition-colors group-hover:bg-rose-deep group-hover:text-white">
                 <Phone size={17} />
               </span>
@@ -127,7 +127,19 @@ export function Hero() {
                 <span className="block text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-muted">Telefone</span>
                 <span className="block text-lg font-bold tracking-wide transition-colors group-hover:text-rose-deep">{contact.phone}</span>
               </span>
-            </motion.a>
+            </a>
+            {whatsappLink && (
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[2.6rem] items-center gap-2 rounded-full bg-[#25D366] px-4 text-sm font-bold text-white shadow-[0_10px_24px_-10px_rgba(37,211,102,0.9)] transition-all hover:-translate-y-0.5 hover:bg-[#1ebe5b]"
+              >
+                <WhatsAppIcon size={18} />
+                WhatsApp
+              </a>
+            )}
+            </motion.div>
           )}
         </div>
 

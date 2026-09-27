@@ -82,8 +82,8 @@ export function ResumeSheet() {
             <>
               <div style={{ height: 14 }} />
               <SideTitle>Contato</SideTitle>
-              {contact.whatsapp && <Info label="WhatsApp" value={`+${contact.whatsapp}`} />}
-              {contact.phone && <Info label="Telefone" value={contact.phone} />}
+              {contact.phone && <Info label={contact.whatsapp ? "Telefone / WhatsApp" : "Telefone"} value={contact.phone} />}
+              {contact.whatsapp && !contact.phone && <Info label="WhatsApp" value={`+${contact.whatsapp}`} />}
               {contact.email && <Info label="E-mail" value={contact.email} />}
             </>
           )}

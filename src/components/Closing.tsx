@@ -1,6 +1,6 @@
-import { ArrowRight, ArrowUp, Download, LoaderCircle, Mail, MapPin, MessageCircle, Phone, Printer, Quote } from "lucide-react";
+import { ArrowRight, ArrowUp, Download, LoaderCircle, Mail, MapPin, Phone, Printer, Quote } from "lucide-react";
 import { address, addressFull, contact, hasContact, objective, profile, whatsappLink } from "../data";
-import { Reveal, SectionHeading, ThreadLine } from "./ui";
+import { Reveal, SectionHeading, ThreadLine, WhatsAppIcon } from "./ui";
 import { useResume } from "./useResume";
 
 function ResumeButtons({ className = "" }: { className?: string }) {
@@ -88,10 +88,10 @@ export function Availability() {
 
 export function Contact() {
   const channels = [
-    contact.whatsapp && { icon: MessageCircle, label: "WhatsApp", value: "Enviar mensagem", href: whatsappLink },
+    contact.whatsapp && { icon: WhatsAppIcon, label: "WhatsApp", value: contact.phone || "Enviar mensagem", href: whatsappLink },
     contact.phone && { icon: Phone, label: "Telefone", value: contact.phone, href: `tel:+55${contact.phone.replace(/\D/g, "")}` },
     contact.email && { icon: Mail, label: "E-mail", value: contact.email, href: `mailto:${contact.email}` },
-  ].filter(Boolean) as { icon: typeof Phone; label: string; value: string; href: string }[];
+  ].filter(Boolean) as { icon: (p: { size?: number }) => JSX.Element; label: string; value: string; href: string }[];
 
   return (
     <section id="contato" className="relative overflow-hidden bg-white py-24 md:py-32">
