@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { asset, contact, differentials, experience, images, objective, profile, skills } from "../data";
+import { addressFull, asset, contact, differentials, experience, images, objective, profile, skills } from "../data";
 
 /*
  * Folha A4 (794 × 1122 px = 210 × 297 mm) usada para o PDF e para a impressão.
@@ -73,6 +73,7 @@ export function ResumeSheet() {
           <div style={{ borderTop: `1.5px dashed ${C.gold}`, margin: "30px 0 24px", opacity: 0.6 }} />
 
           <SideTitle>Informações</SideTitle>
+          <Info label="Endereço" value={addressFull} />
           <Info label="Naturalidade" value={profile.city} />
           <Info label="Experiência" value="Mais de 15 anos" />
           <Info label="Disponibilidade" value="Disponível para novas oportunidades" />

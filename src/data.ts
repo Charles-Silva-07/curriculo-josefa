@@ -26,7 +26,7 @@ export const images = {
 export const profile = {
   name: "Josefa da Silva Lima",
   role: "Costureira",
-  city: "Juazeiro do Norte – CE",
+  city: "Juazeiro do Norte – CE", // naturalidade
   headline: "Experiência, dedicação e conhecimento na confecção e no acabamento de peças.",
   summary:
     "Profissional com mais de 15 anos de experiência na área de confecção, ajustes e operação de máquinas industriais.",
@@ -35,6 +35,14 @@ export const profile = {
     "Atualmente estou em busca de uma nova oportunidade profissional mais próxima de casa, devido à distância do meu atual local de trabalho.",
   ],
 };
+
+// Endereço onde mora (sem o número da casa, de propósito)
+export const address = {
+  street: "Rua Dona Amélia",
+  district: "Jardim Mimas",
+  city: "Embu das Artes – SP",
+};
+export const addressFull = `${address.street} – ${address.district}, ${address.city}`;
 
 export const experience = {
   company: "TDB Têxtil S/A",

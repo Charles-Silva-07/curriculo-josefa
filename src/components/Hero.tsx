@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, ArrowRight, MapPin } from "lucide-react";
 import { useRef } from "react";
-import { asset, images, profile, whatsappLink } from "../data";
+import { address, asset, images, profile, whatsappLink } from "../data";
 import { ThreadLine } from "./ui";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -142,8 +142,10 @@ export function Hero() {
                 <MapPin size={17} />
               </span>
               <span className="min-w-0">
-                <span className="block text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-muted">Naturalidade</span>
-                <span className="block truncate text-sm font-semibold text-ink">{profile.city}</span>
+                <span className="block text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-muted">Reside em</span>
+                <span className="block text-sm font-semibold leading-snug text-ink">
+                  {address.district} · <span className="whitespace-nowrap">{address.city}</span>
+                </span>
               </span>
             </div>
           </motion.div>

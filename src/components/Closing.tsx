@@ -1,5 +1,5 @@
 import { ArrowRight, ArrowUp, Download, LoaderCircle, Mail, MapPin, MessageCircle, Phone, Printer, Quote } from "lucide-react";
-import { contact, hasContact, objective, profile, whatsappLink } from "../data";
+import { address, addressFull, contact, hasContact, objective, profile, whatsappLink } from "../data";
 import { Reveal, SectionHeading, ThreadLine } from "./ui";
 import { useResume } from "./useResume";
 
@@ -128,10 +128,13 @@ export function Contact() {
 
           <Reveal delay={0.15}>
             <div className="mt-6 flex flex-col items-center gap-6 rounded-3xl border border-dashed border-gold/50 bg-cream p-8 text-center sm:p-10">
-              <span className="inline-flex items-center gap-2 text-sm text-muted">
-                <MapPin size={16} className="text-rose-deep" />
-                {profile.city}
-              </span>
+              <div className="flex flex-col items-center gap-1.5">
+                <span className="inline-flex items-start gap-2 text-sm font-semibold text-ink">
+                  <MapPin size={16} className="mt-0.5 shrink-0 text-rose-deep" />
+                  {addressFull}
+                </span>
+                <span className="text-xs text-muted">Natural de {profile.city}</span>
+              </div>
               <p className="max-w-md text-pretty font-serif text-2xl font-medium leading-snug text-ink">
                 Leve meu currículo com você ou imprima para sua equipe.
               </p>
@@ -150,7 +153,7 @@ export function Footer() {
       <div className="container flex flex-col items-center gap-6 text-center">
         <p className="font-serif text-3xl font-semibold">{profile.name}</p>
         <p className="text-sm uppercase tracking-[0.25em] text-gold">
-          {profile.role} <span className="text-cream/30">|</span> {profile.city}
+          {profile.role} <span className="text-cream/30">|</span> {address.city}
         </p>
         <span className="stitch w-40 text-cream/20" />
         <p className="text-xs text-cream/50">Currículo profissional online</p>
