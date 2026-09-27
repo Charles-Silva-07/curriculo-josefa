@@ -12,7 +12,7 @@
  */
 export const contact = {
   whatsapp: "",
-  phone: "",
+  phone: "(11) 98573-2532",
   email: "",
 };
 

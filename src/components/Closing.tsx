@@ -89,7 +89,7 @@ export function Availability() {
 export function Contact() {
   const channels = [
     contact.whatsapp && { icon: MessageCircle, label: "WhatsApp", value: "Enviar mensagem", href: whatsappLink },
-    contact.phone && { icon: Phone, label: "Telefone", value: contact.phone, href: `tel:${contact.phone.replace(/\D/g, "")}` },
+    contact.phone && { icon: Phone, label: "Telefone", value: contact.phone, href: `tel:+55${contact.phone.replace(/\D/g, "")}` },
     contact.email && { icon: Mail, label: "E-mail", value: contact.email, href: `mailto:${contact.email}` },
   ].filter(Boolean) as { icon: typeof Phone; label: string; value: string; href: string }[];
 

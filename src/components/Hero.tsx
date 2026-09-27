@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown, ArrowRight, MapPin } from "lucide-react";
+import { ArrowDown, ArrowRight, MapPin, Phone } from "lucide-react";
 import { useRef } from "react";
-import { address, asset, images, profile, whatsappLink } from "../data";
+import { address, asset, contact, images, profile, whatsappLink } from "../data";
 import { ThreadLine } from "./ui";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -111,6 +111,24 @@ export function Hero() {
               <ArrowDown size={16} className="transition-transform group-hover:translate-y-0.5" />
             </a>
           </motion.div>
+
+          {contact.phone && (
+            <motion.a
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.75 }}
+              href={`tel:+55${contact.phone.replace(/\D/g, "")}`}
+              className="group mt-6 inline-flex items-center gap-3 text-ink"
+            >
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-rose-soft text-rose-deep transition-colors group-hover:bg-rose-deep group-hover:text-white">
+                <Phone size={17} />
+              </span>
+              <span>
+                <span className="block text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-muted">Telefone</span>
+                <span className="block text-lg font-bold tracking-wide transition-colors group-hover:text-rose-deep">{contact.phone}</span>
+              </span>
+            </motion.a>
+          )}
         </div>
 
         {/* Foto */}
