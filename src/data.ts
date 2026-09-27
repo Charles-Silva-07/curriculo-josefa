@@ -11,8 +11,8 @@
  *  email:    Ex.: "nome@gmail.com"
  */
 export const contact = {
-  whatsapp: "5511985732532",
-  phone: "(11) 98573-2532",
+  whatsapp: "5511985732531",
+  phone: "(11) 98573-2531",
   email: "",
 };
 
