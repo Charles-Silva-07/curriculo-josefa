@@ -182,6 +182,7 @@ npm run preview    # serve o /dist em http://localhost:4173
   - Não entende cores `oklch`, por isso o projeto fica no Tailwind v3 e a folha usa hex.
   - Desloca um pouco o texto verticalmente: os marcadores (bolinhas) ficam levemente desalinhados só no PDF baixado. Na impressão fica perfeito.
   - O html2pdf **clona** o elemento. O posicionamento fora da tela precisa ficar no wrapper (`.resume-offscreen`), nunca no próprio `#resume-sheet`.
+- **Foto nítida no PDF:** o html2canvas deixava a foto borrada. Agora `useResume.ts` gera o PDF com `.toPdf().get("pdf")` e **redesenha a foto original em alta resolução** por cima (JPEG 0,92, com a mesma borda e os mesmos cantos do elemento `[data-pdf-photo]`) via `pdf.addImage`. O PDF fica com cerca de 725 KB. É a mesma solução do currículo da Werllyane.
 - **Tudo precisa caber em 1 página.** Depois de mudar o conteúdo, gere o PDF e confira que ele continua com 1 página.
 
 ---

@@ -58,6 +58,7 @@ export function ResumeSheet() {
         {/* Coluna lateral */}
         <aside style={{ width: 262, background: C.light, padding: "44px 30px", boxSizing: "border-box", borderRight: `1px solid ${C.beige}` }}>
           <div
+            data-pdf-photo
             style={{
               width: 190,
               height: 228,
